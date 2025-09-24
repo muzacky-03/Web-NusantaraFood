@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- icon -->
+    <script
+      src="https://kit.fontawesome.com/706d2b03c1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Tentang Kami - Nusantara Cuisine</title>
+    
+    <style>
+      :root {
+        --primary-color: #e67e22;
+        --secondary-color: #d35400;
+        --accent-color: #f39c12;
+        --dark-color: #2c3e50;
+        --light-color: #ecf0f1;
+        --text-color: #333;
+        --text-light: #777;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+      }
+      
+      .navbar {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 15px 0;
+      }
+      
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white !important;
+      }
+      
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 0 5px;
+        border-radius: 5px;
+        padding: 8px 15px !important;
+      }
+      
+      .nav-link:hover {
+        background-color: rgba(255,255,255,0.2);
+        transform: translateY(-2px);
+      }
+      
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      
+      .dropdown-item {
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .dropdown-item:hover {
+        background-color: var(--light-color);
+        padding-left: 25px;
+      }
+      
+      .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/2150787886.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      }
+      
+      .section-title {
+        position: relative;
+        margin-bottom: 50px;
+      }
+      
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+      }
+      
+      .about-section {
+        padding: 80px 0;
+      }
+      
+      .about-img {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .about-img:hover {
+        transform: scale(1.02);
+      }
+      
+      .vision-mission-section {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+      }
+      
+      .vision-mission-card {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border-top: 5px solid var(--primary-color);
+      }
+      
+      .vision-mission-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      }
+      
+      .vision-mission-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+      
+      .history-section {
+        padding: 80px 0;
+      }
+      
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 3px;
+      }
+      
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+      
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      
+      .left {
+        left: 0;
+      }
+      
+      .right {
+        left: 50%;
+      }
+      
+      .left::after {
+        right: -10px;
+      }
+      
+      .right::after {
+        left: -10px;
+      }
+      
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .footer {
+        background: linear-gradient(135deg, var(--dark-color), #1a2530);
+        color: white;
+        padding: 50px 0 20px;
+      }
+      
+      .footer h5 {
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      
+      .footer h5::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary-color);
+      }
+      
+      .footer p, .footer a {
+        color: #bbb;
+        transition: color 0.3s ease;
+      }
+      
+      .footer a:hover {
+        color: white;
+        text-decoration: none;
+      }
+      
+      .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        background: var(--primary-color);
+        transform: translateY(-5px);
+      }
+      
+      .copyright {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        color: #999;
+        font-size: 0.9rem;
+      }
+      
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+        
+        .timeline::after {
+          left: 31px;
+        }
+        
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+        
+        .timeline-item::after {
+          left: 21px;
+        }
+        
+        .right {
+          left: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Nusantara Cuisine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Produk
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./Product/makanan.html">Makanan</a></li>
+                <li><a class="dropdown-item" href="./Product/minuman.html">Minuman</a></li>
+                <li><a class="dropdown-item" href="./Product/snack.html">Snack</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontak</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Masuk</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>Tentang Kami</h1>
+        <p class="lead">Mengenal lebih dekat dengan Nusantara Cuisine</p>
+      </div>
+    </section>
+
+    <!-- about section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="./img/2150787886.jpg" alt="Nusantara Cuisine" class="img-fluid about-img">
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title">Nusantara Cuisine</h2>
+            <p class="lead text-muted">Masakan Nusantara</p>
+            <p>
+              Perusahaan Kuliner Nusantara didirikan pada tahun 2024 dengan visi untuk memperkenalkan kekayaan kuliner Indonesia ke dunia. Kami berkomitmen untuk menyajikan masakan autentik dari berbagai daerah di Indonesia, mulai dari Sabang sampai Merauke.
+            </p>
+            <p>
+              Dengan menggunakan bahan-bahan lokal berkualitas dan resep tradisional, kami menghadirkan pengalaman kuliner yang menggugah selera dan memperkenalkan kekayaan budaya Indonesia kepada para pelanggan.
+            </p>
+            <p>
+              Kami percaya bahwa setiap hidangan memiliki cerita, dan kami berdedikasi untuk menghadirkan cerita-cerita tersebut melalui cita rasa yang autentik dan pengalaman yang tak terlupakan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- visi misi section -->
+    <section class="vision-mission-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="section-title">Visi & Misi</h2>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-6 mb-4">
+            <div class="vision-mission-card">
+              <div class="vision-mission-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3>Visi</h3>
+              <p>
+                Menjadi pelopor dalam memperkenalkan dan melestarikan kekayaan kuliner Indonesia di kancah nasional dan internasional, dengan menyajikan masakan autentik Nusantara yang berkualitas tinggi dan berkelanjutan, serta memperkaya pengalaman kuliner pelanggan melalui inovasi dan dedikasi terhadap budaya Indonesia.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="vision-mission-card">
+              <div class="vision-mission-icon">
+                <i class="fas fa-flag"></i>
+              </div>
+              <h3>Misi</h3>
+              <p>
+                Misi kami adalah untuk melestarikan dan mempromosikan masakan tradisional Indonesia melalui inovasi dan dedikasi terhadap kualitas. Kami berupaya menjadi pelopor dalam industri kuliner dengan menyediakan berbagai pilihan menu yang dapat dinikmati oleh semua kalangan.
+              </p>
+              <ul>
+                <li>Menggunakan bahan-bahan lokal berkualitas tinggi</li>
+                <li>Menjaga keaslian resep tradisional</li>
+                <li>Mengembangkan inovasi dalam penyajian dan pelayanan</li>
+                <li>Mendukung petani dan produsen lokal</li>
+                <li>Mempromosikan keberlanjutan dalam praktik bisnis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- sejarah section -->
+    <section class="history-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="section-title">Sejarah Kami</h2>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="timeline">
+              <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h4>2024 - Awal Berdiri</h4>
+                  <p>Perusahaan Kuliner Nusantara didirikan oleh sekelompok pengusaha muda yang terinspirasi oleh kekayaan kuliner Indonesia. Mereka bermimpi untuk memperkenalkan masakan autentik Nusantara kepada masyarakat lokal dan internasional.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h4>2025 - Ekspansi Pertama</h4>
+                  <p>Restoran kedua kami dibuka di Surabaya, menandai awal ekspansi ke kota-kota besar lainnya di Indonesia. Kami juga meluncurkan layanan katering untuk acara-acara khusus.</p>
+                </div>
+              </div>
+              <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h4>2026 - Pengakuan Nasional</h4>
+                  <p>Nusantara Cuisine menerima penghargaan "Restoran Tradisional Terbaik" dari Asosiasi Kuliner Indonesia. Kami juga meluncurkan produk bumbu instan untuk memudahkan pelanggan memasak di rumah.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h4>2027 - Ekspansi Internasional</h4>
+                  <p>Restoran pertama kami di luar negeri dibuka di Singapura, menandai langkah pertama dalam misi kami untuk memperkenalkan kuliner Indonesia ke dunia internasional.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5>Nusantara Cuisine</h5>
+            <p>JL. PROF JOKO SUTONO, SH NO. 2 A, Melawai, Kec. Kebayoran Baru, Kota Jakarta Selatan Prov. D.K.I. Jakarta</p>
+            <p><i class="fas fa-envelope me-2"></i>Nusantaracuis@gmail.com</p>
+            <p><i class="fas fa-phone me-2"></i>085779317663</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Tautan Cepat</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="./Product/makanan.html">Menu</a></li>
+              <li><a href="contact.html">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Ikuti Kami</h5>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mt-3">Instagram: @kulinernusantara</p>
+            <p>Facebook: Kuliner Nusantara</p>
+            <p>Twitter: @kulinernusantara</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Jam Operasional</h5>
+            <p>Senin - Jumat: 09:00 - 22:00</p>
+            <p>Sabtu - Minggu: 08:00 - 23:00</p>
+            <p>Hari Libur: 10:00 - 21:00</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+              &copy; 2023 Nusantara Cuisine. Hak cipta dilindungi. | Dirancang oleh abduloh.muzacky_01
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

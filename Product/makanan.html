@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/706d2b03c1.js" crossorigin="anonymous"></script>
+  <title>Makanan - Nusantara Cuisine</title>
+  <style>
+    :root {
+      --primary-color: #e67e22;
+      --secondary-color: #d35400;
+      --accent-color: #f39c12;
+      --dark-color: #2c3e50;
+      --light-color: #ecf0f1;
+      --text-color: #333;
+      --text-light: #777;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+      border-radius: 5px;
+      padding: 8px 15px !important;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .dropdown-item:hover {
+      background-color: var(--light-color);
+      padding-left: 25px;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 2px;
+    }
+    
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .card-body {
+      padding: 25px;
+    }
+    
+    .card-title {
+      color: var(--dark-color);
+    }
+    
+    .price {
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    
+    .footer {
+      background: linear-gradient(135deg, var(--dark-color), #1a2530);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer h5 {
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary-color);
+    }
+    
+    .footer p, .footer a {
+      color: #bbb;
+    }
+    
+    .footer a:hover {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Nusantara Cuisine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about.html">Tentang Kami</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Produk</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="makanan.html">Makanan</a></li>
+              <li><a class="dropdown-item" href="minuman.html">Minuman</a></li>
+              <li><a class="dropdown-item" href="snack.html">Snack</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="../login.html">Masuk</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Produk Makanan -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Hidangan Makanan</h2>
+      <p class="text-center mb-5">Nikmati kelezatan kuliner Nusantara dalam setiap suap</p>
+      <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="../img/bakso.jpg" class="card-img-top" alt="Bakso">
+            <div class="card-body">
+              <h5 class="card-title">Bakso</h5>
+              <p class="card-text">
+                Bakso adalah salah satu makanan jalanan paling populer di Indonesia, terdiri dari bola daging yang biasanya dibuat dari campuran daging sapi giling, tepung tapioka, dan bumbu-bumbu.
+              </p>
+              <div class="price">Rp60.000</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="../img/rawon.jpg" class="card-img-top" alt="Rawon">
+            <div class="card-body">
+              <h5 class="card-title">Rawon</h5>
+              <p class="card-text">
+                Masakan khas Jawa Timur dengan kuah hitam pekat dari kluwak, disajikan dengan nasi, tauge, telur asin, dan sambal.
+              </p>
+              <div class="price">Rp57.000</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card">
+            <img src="../img/rendang.jpeg" class="card-img-top" alt="Rendang">
+            <div class="card-body">
+              <h5 class="card-title">Rendang</h5>
+              <p class="card-text">
+                Masakan Minangkabau yang mendunia, daging sapi dimasak perlahan dalam santan dan rempah hingga kering dan empuk.
+              </p>
+              <div class="price">Rp88.000</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan lebih banyak sesuai kebutuhan -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5>Nusantara Cuisine</h5>
+          <p>JL. PROF JOKO SUTONO, SH NO. 2 A, Melawai, Kec. Kebayoran Baru, Kota Jakarta Selatan Prov. D.K.I. Jakarta</p>
+          <p><i class="fas fa-envelope me-2"></i>Nusantaracuis@gmail.com</p>
+          <p><i class="fas fa-phone me-2"></i>085779317663</p>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>Tautan Cepat</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="../about.html">Tentang Kami</a></li>
+            <li><a href="makanan.html">Menu</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Ikuti Kami</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p class="mt-3">Instagram: @kulinernusantara</p>
+          <p>Facebook: Kuliner Nusantara</p>
+          <p>Twitter: @kulinernusantara</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Jam Operasional</h5>
+          <p>Senin - Jumat: 09:00 - 22:00</p>
+          <p>Sabtu - Minggu: 08:00 - 23:00</p>
+          <p>Hari Libur: 10:00 - 21:00</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="copyright">
+            &copy; 2023 Nusantara Cuisine. Hak cipta dilindungi. | Dirancang oleh abduloh.muzacky_01
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
